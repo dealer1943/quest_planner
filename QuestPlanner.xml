@@ -1,0 +1,74 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Frame name="QuestPlannerFrame" parent="UIParent" hidden="true" movable="true" enableMouse="true" frameStrata="DIALOG" inherits="BackdropTemplate">
+		<Size x="540" y="560"/>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Frames>
+			<Button name="$parentClose" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT" x="-5" y="-5"/>
+				</Anchors>
+			</Button>
+			<Frame name="QuestPlannerFilterHost">
+				<Size x="500" y="52"/>
+				<Anchors>
+					<Anchor point="TOPLEFT" x="20" y="-58"/>
+					<Anchor point="TOPRIGHT" x="-20" y="-58"/>
+				</Anchors>
+			</Frame>
+			<Frame name="QuestPlannerMeterHost">
+				<Size x="500" y="40"/>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="QuestPlannerFilterHost" relativePoint="BOTTOMLEFT" x="0" y="-4"/>
+					<Anchor point="TOPRIGHT" relativeTo="QuestPlannerFilterHost" relativePoint="BOTTOMRIGHT" x="0" y="-4"/>
+				</Anchors>
+			</Frame>
+			<ScrollFrame name="QuestPlannerScroll" inherits="UIPanelScrollFrameTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="QuestPlannerMeterHost" relativePoint="BOTTOMLEFT" x="0" y="-8"/>
+					<Anchor point="BOTTOMRIGHT" x="-36" y="36"/>
+				</Anchors>
+				<ScrollChild>
+					<Frame name="QuestPlannerScrollChild">
+						<Size x="470" y="10"/>
+					</Frame>
+				</ScrollChild>
+			</ScrollFrame>
+		</Frames>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="QuestPlannerTitle" inherits="GameFontNormalLarge" text="Quest Planner">
+					<Anchors>
+						<Anchor point="TOP" x="0" y="-16"/>
+					</Anchors>
+				</FontString>
+				<FontString name="QuestPlannerHint" inherits="GameFontHighlightSmall" justifyH="LEFT">
+					<Size x="500" y="24"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="22" y="-38"/>
+					</Anchors>
+					<Color r="0.85" g="0.80" b="0.65"/>
+				</FontString>
+				<FontString name="QuestPlannerStatus" inherits="GameFontDisableSmall" justifyH="LEFT">
+					<Size x="500" y="16"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="22" y="14"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				QuestPlanner_OnLoad(self)
+			</OnLoad>
+			<OnShow>
+				QuestPlanner_OnShow(self)
+			</OnShow>
+			<OnHide>
+				QuestPlanner_OnHide(self)
+			</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

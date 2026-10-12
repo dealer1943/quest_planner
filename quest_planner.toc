@@ -1,0 +1,12 @@
+## Interface: 16001
+## Title: Quest Planner
+## Notes: Rank nearby quests by distance and XP that still counts toward your next level.
+## Author: dealer1943
+## Version: 0.1.0
+## SavedVariablesPerCharacter: QuestPlannerCharDB
+## IconTexture: Interface\Icons\INV_Misc_Map_01
+## Category: Quests
+## AddonCompartmentFunc: QuestPlanner_OnCompartmentClick
+
+QuestPlanner.lua
+QuestPlanner.xml
